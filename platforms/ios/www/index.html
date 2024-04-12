@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, please refer to the docs:
+            https://cordova.apache.org/docs/en/latest/
+        Some notes:
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+        <meta name="color-scheme" content="light dark">
+        <link rel="stylesheet" href="css/index.css">
+        <title>75 Hard</title>
+    </head>
+    <body>
+        <h1 id="day"></h1>
+        <h2 style="color:blue">Water: </h2>
+        <div class="water1" id="water1-1" onclick="toggleStatus('water1-1', 'blue')"></div>
+        <div class="water1" id="water1-2" onclick="toggleStatus('water1-2', 'blue')"></div>
+        <div class="water1"  id="water1-3" onclick="toggleStatus('water1-3', 'blue')"></div>
+        <div class="water1"  id="water1-4" onclick="toggleStatus('water1-4', 'blue')"></div>
+        <h2 style="color:orange">Indoor Workout: </h2>
+        <div class="indoor" id="indoor1" onclick="toggleStatus('indoor1', 'orange')"></div>
+        <h2 style="color:green">Outdoor Workout: </h2>
+        <div class="outdoor" id="outdoor1" onclick="toggleStatus('outdoor1', 'green')"></div>
+        <h2 style="color:purple">Eat Right: </h2>
+        <h4 class ="macs" id="macs" style="color:purple"></h4>
+        <div class="diet" id="diet1" onclick="toggleStatus('diet1', 'purple')"></div>
+        <h2 style="color:red">Progress Picture: </h2>
+        <div class="pic" id="pic1" onclick="toggleStatus('pic1', 'red')"></div>
+        <h1></h1>
+        <button onclick="nextDay()">Day Complete!</button>
+        <button onclick="updateMacros()">Log Calories and Protein</button>
+        <button onclick="randoMoto()">Motivational Reading</button>
+        <button onclick="resetDay()">Reset Day</button>
+        <script src="cordova.js"></script>
+        <script src="js/index.js"></script>
+    </body>
+</html>
