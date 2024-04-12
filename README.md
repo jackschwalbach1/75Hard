@@ -1,2 +1,0 @@
-# 75Hard
-Fitness App
