@@ -123,6 +123,22 @@ function setCookie(name, value) {
 
   document.addEventListener('deviceready', onDeviceReady, false);
 
+  document.addEventListener('touchstart', function(event) {
+    if (event.touches.length > 1) {
+      event.preventDefault();
+    }
+  }, { passive: false });
+  
+  let lastTouchEnd = 0;
+  document.addEventListener('touchend', function(event) {
+    const now = (new Date()).getTime();
+    if (now - lastTouchEnd <= 300) {
+      event.preventDefault();
+    }
+    lastTouchEnd = now;
+  }, false);
+  
+
   function onDeviceReady() {
       document.getElementById('nextDayButton').addEventListener('click', nextDay);
       document.getElementById('macrosButton').addEventListener('click', updateMacros);
@@ -148,3 +164,5 @@ function setCookie(name, value) {
         toggleStatus('pic1', 'red')
       });
   }
+
+  

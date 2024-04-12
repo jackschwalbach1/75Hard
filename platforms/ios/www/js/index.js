@@ -47,6 +47,15 @@ function setCookie(name, value) {
     return "";
   }
 
+  setCookie('water1-1', false);
+  setCookie('water1-2', false);
+  setCookie('water1-3', false);
+  setCookie('water1-4', false);
+  setCookie('indoor1', false);
+  setCookie('outdoor1', false);
+  setCookie('diet1',false);
+  setCookie('pic1',false);
+
   function nextDay() {
     let day = parseInt(getCookie('dayCount')) || 0;
     if(day == 75){
@@ -58,15 +67,36 @@ function setCookie(name, value) {
     day++;
     document.getElementById('day').innerHTML = 'Days Complete: ' + day + '/75';
     setCookie('dayCount', day);
-    toggleStatus('water1-1', 'blue');
-    toggleStatus('water1-2', 'blue');
-    toggleStatus('water1-3', 'blue');
-    toggleStatus('water1-4', 'blue');
-    toggleStatus('indoor1', 'orange');
-    toggleStatus('outdoor1', 'green');
-    toggleStatus('diet1', 'purple');
-    toggleStatus('pic1', 'red')
-    
+    resetBoard();
+  }
+
+  function resetBoard(){
+    alert(getCookie('water1-1'));
+    if(getCookie('water1-1') == true){
+        alert("in");
+        toggleStatus('water1-1', 'blue');
+    }
+    if(getCookie('water1-2') == true){
+        toggleStatus('water1-2', 'blue');
+    }
+    if(getCookie('water1-3') == true){
+        toggleStatus('water1-3', 'blue');
+    }
+    if(getCookie('water1-4') == true){
+        toggleStatus('water1-4', 'blue');
+    }
+    if(getCookie('indoor1') == true){
+        toggleStatus('indoor1', 'orange');
+    }
+    if(getCookie('outdoor1') == true){
+        toggleStatus('outdoor1', 'green');
+    }
+    if(getCookie('diet1') == true){
+        toggleStatus('diet1', 'purple');
+    }
+    if(getCookie('pic1') == true){
+        toggleStatus('pic1', 'red')
+    }
   }
   
   function resetDay(){
@@ -74,6 +104,7 @@ function setCookie(name, value) {
     if(sure == true){
       setCookie('dayCount', -1);
       nextDay();
+      resetBoard();
     }
   }
   
@@ -103,7 +134,13 @@ function setCookie(name, value) {
 
   function toggleStatus(id, name) {
     let status = getCookie(id);
-    let newStatus = (status === 'true') ? 'false' : 'true';
+    let newStatus = null;
+    if(status == true){
+        newStatus = false;
+    }
+    else{
+        newStatus = true;
+    }
     setCookie(id, newStatus);
     fillBorder(id, name);
   }
@@ -122,6 +159,22 @@ function setCookie(name, value) {
   });
 
   document.addEventListener('deviceready', onDeviceReady, false);
+
+  document.addEventListener('touchstart', function(event) {
+    if (event.touches.length > 1) {
+      event.preventDefault();
+    }
+  }, { passive: false });
+  
+  let lastTouchEnd = 0;
+  document.addEventListener('touchend', function(event) {
+    const now = (new Date()).getTime();
+    if (now - lastTouchEnd <= 300) {
+      event.preventDefault();
+    }
+    lastTouchEnd = now;
+  }, false);
+  
 
   function onDeviceReady() {
       document.getElementById('nextDayButton').addEventListener('click', nextDay);
@@ -148,3 +201,5 @@ function setCookie(name, value) {
         toggleStatus('pic1', 'red')
       });
   }
+
+  
