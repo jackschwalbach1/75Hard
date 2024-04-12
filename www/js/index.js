@@ -50,7 +50,7 @@ function setCookie(name, value) {
   function nextDay() {
     let day = parseInt(getCookie('dayCount')) || 0;
     if(day == 75){
-      alert("LET'S FUCKING GOOOOOOOOOOO!!!!!!!!!!\nGOOD SHIT\n75 DAYS AIN'T SHIT");
+      alert("LET'S GOOOOOOOOOOO!!!!!!!!!!\nCHALLENGE COMPLETE");
     }
     setCookie('cals', 0);
     setCookie('prot', 0);
@@ -88,28 +88,7 @@ function setCookie(name, value) {
     setCookie('prot', total_prot);
     document.getElementById('macs').innerHTML = 'Calories: ' + total_cals + '   Protein: ' + total_prot + 'gs';
   }
-  
-  function randoMoto(){
-    let max = 5;
-    let min = 1;
-    let rando = Math.floor(Math.random() * (max - min + 1) ) + min;
-    if(rando == 1){
-      window.location.replace("https://everydaypower.com/");
-    }
-    else if(rando == 2){
-      window.location.replace("https://www.keepinspiring.me/");
-    }
-    else if(rando == 3){
-      window.location.replace("https://www.success.com/");
-    }
-    else if(rando == 4){
-      window.location.replace("https://tinybuddha.com/");
-    }
-    else if(rando == 5){
-      window.location.replace("https://addicted2success.com/");
-    }
-    
-  }
+
 
 
   function fillBorder(id, name) {
@@ -141,3 +120,31 @@ function setCookie(name, value) {
     fillBorder('diet1', 'purple');
     fillBorder('pic1', 'red');
   });
+
+  document.addEventListener('deviceready', onDeviceReady, false);
+
+  function onDeviceReady() {
+      document.getElementById('nextDayButton').addEventListener('click', nextDay);
+      document.getElementById('macrosButton').addEventListener('click', updateMacros);
+      document.getElementById('resetButton').addEventListener('click', resetDay);
+
+      var waterDivs = document.querySelectorAll('.water1');
+      waterDivs.forEach(function(div) {
+          div.addEventListener('click', function() {
+              toggleStatus(this.id, 'blue');
+          });
+      });
+
+      document.getElementById('indoor1').addEventListener('click', function() {
+        toggleStatus('indoor1', 'orange');
+      });
+      document.getElementById('outdoor1').addEventListener('click', function() {
+        toggleStatus('outdoor1', 'green')
+      });
+      document.getElementById('diet1').addEventListener('click', function() {
+        toggleStatus('diet1', 'purple')
+      });
+      document.getElementById('pic1').addEventListener('click', function() {
+        toggleStatus('pic1', 'red')
+      });
+  }
