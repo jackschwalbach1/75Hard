@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "1D6058900D05DD3D006BFB54"
-               BuildableName = "HelloCordova.app"
-               BlueprintName = "HelloCordova"
-               ReferencedContainer = "container:HelloCordova.xcodeproj">
+               BuildableName = "75 Hard.app"
+               BlueprintName = "75 Hard"
+               ReferencedContainer = "container:75 Hard.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -51,9 +51,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1D6058900D05DD3D006BFB54"
-            BuildableName = "HelloCordova.app"
-            BlueprintName = "HelloCordova"
-            ReferencedContainer = "container:HelloCordova.xcodeproj">
+            BuildableName = "75 Hard.app"
+            BlueprintName = "75 Hard"
+            ReferencedContainer = "container:75 Hard.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -74,9 +74,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1D6058900D05DD3D006BFB54"
-            BuildableName = "HelloCordova.app"
-            BlueprintName = "HelloCordova"
-            ReferencedContainer = "container:HelloCordova.xcodeproj">
+            BuildableName = "75 Hard.app"
+            BlueprintName = "75 Hard"
+            ReferencedContainer = "container:75 Hard.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -93,9 +93,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1D6058900D05DD3D006BFB54"
-            BuildableName = "HelloCordova.app"
-            BlueprintName = "HelloCordova"
-            ReferencedContainer = "container:HelloCordova.xcodeproj">
+            BuildableName = "75 Hard.app"
+            BlueprintName = "75 Hard"
+            ReferencedContainer = "container:75 Hard.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

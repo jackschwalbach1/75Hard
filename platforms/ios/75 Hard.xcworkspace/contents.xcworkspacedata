@@ -20,6 +20,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:HelloCordova.xcodeproj">
+      location = "group:75 Hard.xcodeproj">
    </FileRef>
 </Workspace>
