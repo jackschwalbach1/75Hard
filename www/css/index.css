@@ -108,3 +108,29 @@ h1 {
         background-image:linear-gradient(to bottom, #585858 0%, #1B1B1B 51%);
     }
 }
+
+.water1 {
+    width: 25px;
+    height: 25px;
+    border: 1px solid blue;
+  }
+  .indoor {
+    width: 25px;
+    height: 25px;
+    border: 1px solid orange;
+  }
+  .outdoor {
+    width: 25px;
+    height: 25px;
+    border: 1px solid green;
+  }
+  .diet {
+    width: 25px;
+    height: 25px;
+    border: 1px solid purple;
+  }
+  .pic {
+    width: 25px;
+    height: 25px;
+    border: 1px solid red;
+  }

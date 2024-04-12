@@ -34,16 +34,29 @@
         <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
         <meta name="color-scheme" content="light dark">
         <link rel="stylesheet" href="css/index.css">
-        <title>Hello World</title>
+        <title>75 Hard</title>
     </head>
     <body>
-        <div class="app">
-            <h1>Apache Cordova</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
-            </div>
-        </div>
+        <h1 id="day"></h1>
+        <h2 style="color:blue">Water: </h2>
+        <div class="water1" id="water1-1" onclick="toggleStatus('water1-1', 'blue')"></div>
+        <div class="water1" id="water1-2" onclick="toggleStatus('water1-2', 'blue')"></div>
+        <div class="water1"  id="water1-3" onclick="toggleStatus('water1-3', 'blue')"></div>
+        <div class="water1"  id="water1-4" onclick="toggleStatus('water1-4', 'blue')"></div>
+        <h2 style="color:orange">Indoor Workout: </h2>
+        <div class="indoor" id="indoor1" onclick="toggleStatus('indoor1', 'orange')"></div>
+        <h2 style="color:green">Outdoor Workout: </h2>
+        <div class="outdoor" id="outdoor1" onclick="toggleStatus('outdoor1', 'green')"></div>
+        <h2 style="color:purple">Eat Right: </h2>
+        <h4 class ="macs" id="macs" style="color:purple"></h4>
+        <div class="diet" id="diet1" onclick="toggleStatus('diet1', 'purple')"></div>
+        <h2 style="color:red">Progress Picture: </h2>
+        <div class="pic" id="pic1" onclick="toggleStatus('pic1', 'red')"></div>
+        <h1></h1>
+        <button onclick="nextDay()">Day Complete!</button>
+        <button onclick="updateMacros()">Log Calories and Protein</button>
+        <button onclick="randoMoto()">Motivational Reading</button>
+        <button onclick="resetDay()">Reset Day</button>
         <script src="cordova.js"></script>
         <script src="js/index.js"></script>
     </body>
